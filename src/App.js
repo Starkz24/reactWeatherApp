@@ -10,7 +10,7 @@ function App() {
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
-      axios.get(url).then((response) => {
+      axios.get(url).then((response) => { //.then kyu ke yaha pa api promise return karta hai re
         setData(response.data)
         console.log(response.data)
       })
@@ -23,8 +23,8 @@ function App() {
       <div className="app">
         <div className="search">
           <input type="text"
-            value={location}
-            onChange={event => setLocation(event.target.value)}
+            value={location} // aur yaha pa jo value setLocation ma the wo location ma chala jaya ga phir api call hogi us location sa  
+            onChange={event => setLocation(event.target.value)} //yaha pa ham us textfield sa value nikal ka setlocation ma set kar raha hai
             onKeyPress={searchLocation}
             placeholder="Enter Location" />
         </div>
